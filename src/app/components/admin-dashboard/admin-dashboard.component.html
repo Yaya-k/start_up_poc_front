@@ -1,0 +1,106 @@
+<div class="todo" style="margin-top: 50px">
+
+  <nav>
+
+    <ul>
+      <li>Dashboard</li>
+      <li (click)="toggle1()">Change User statue</li>
+
+      <li (click)="toggle2()">Change user Mananger</li>
+
+      <li>Déconnexion</li>
+    </ul>
+  </nav>
+
+
+
+  <main class="panelD">
+
+
+    <h1 class="tituloD">Dashboard</h1>
+
+
+    <div class="formularios">
+      <form class="" action="#" method="post">
+        <h3>Un nouvel utilisateur</h3>
+        <input type="text" name="nom" value="" placeholder="Nom">
+        <input type="text" name="prenom" value="" placeholder="Prenom">
+        <input type="email" name="email" value="" placeholder="email">
+        <input type="password" name="password" value="" placeholder="password">
+
+        <br>
+        <input type="submit" name="Envoyer" value="Envoyer" class="bg-success">
+
+      </form>
+    </div>
+    <div class="formularios" *ngIf="show1">
+      <form class="" action="#" method="post">
+        <h3>Changer le statue d'un utilisateur</h3>
+
+        <input type="text"
+               placeholder="Pick one"
+               aria-label="Number"
+               matInput
+               [formControl]="myControl"
+               [matAutocomplete]="auto">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Nouvel statue</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let statue of statues" [value]="statue.value">
+              {{statue.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <input type="submit" name="Changer " value="Changer " class="bg-success">
+      </form>
+    </div>
+
+    <div class="formularios" *ngIf="show2" >
+      <form class="" action="#" method="post">
+        <h3>Changer l'affectation d'une personne</h3>
+
+        <input type="text"
+               placeholder="Pick one"
+               aria-label="Number"
+               matInput
+               [formControl]="myControl"
+               [matAutocomplete]="auto">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptionsUser | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+
+        <br>
+
+        <input type="text"
+               placeholder="Pick one"
+               aria-label="Number"
+               matInput
+               [formControl]="myControl"
+               [matAutocomplete]="auto">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptionsManager | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+        <br>
+        <input type="submit" name="ChangerAffectation " value="Changer l'affection " class="bg-success">
+      </form>
+    </div>
+
+
+
+
+
+  </main>
+
+</div>

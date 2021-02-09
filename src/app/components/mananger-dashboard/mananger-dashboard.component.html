@@ -1,0 +1,129 @@
+<div class="todo" style="margin-top: 50px">
+
+  <nav>
+
+    <ul>
+      <li (click)="toggle()">Dashboard</li>
+      <li (click)="toggle1()">Temps saisis par un User</li>
+      <li (click)="toggle2()"> compte-rendus mensuels des Users</li>
+      <li (click)="toggle3()"> Saisir un projet</li>
+      <li (click)="toggle4()">Saisir un nouveau User pour un projet</li>
+      <li>Déconnexion</li>
+
+    </ul>
+  </nav>
+
+
+
+  <main class="panelD">
+
+
+    <h1 class="tituloD">Dashboard</h1>
+
+  <div *ngIf="show">
+    <h2>Users rattacher<i class="fas fa-arrow-down"></i></h2>
+    <div class="tabla">
+      <table cellpadding="0" cellspacing="0">
+        <tr class="negrita">
+          <th>Nom</th>
+          <th>email</th>
+        </tr>
+
+        <tr>
+          <th>Jean Pierre</th>
+          <th>jean.pierre@dev.dev</th>
+        </tr>
+        <tr>
+          <th>Mandiou Touré</th>
+          <th>mandiou.toure@dev.dev</th>
+        </tr>
+        <tr>
+          <th>Marie Pierre</th>
+          <th>marie.pierre@dev.dev</th>
+        </tr>
+
+      </table>
+    </div>
+
+  </div>
+
+    <div class="formularios" *ngIf="show1">
+      <form class="" action="#" method="post">
+        <h3>Temps saisie par un user</h3>
+
+        <input type="text"
+               placeholder="Pick one"
+               aria-label="Number"
+               matInput
+               [formControl]="myControl"
+               [matAutocomplete]="auto">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+
+
+        <br>
+        <input type="submit" name="Voir " value="Voir " class="bg-success">
+      </form>
+    </div>
+
+    <div class="formularios" *ngIf="show2">
+      <form class="" action="#" method="post">
+        <h3>Compte rendu mensuel User</h3>
+
+        <input type="text"
+               placeholder="Pick one"
+               aria-label="Number"
+               matInput
+               [formControl]="myControl"
+               [matAutocomplete]="auto">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+
+
+        <br>
+        <input type="submit" name="Exporter " value="Exporter " class="bg-success">
+      </form>
+    </div>
+
+
+
+    <div class="formularios" *ngIf="show3">
+      <form class="" action="#" method="post">
+        <h3>Saisire un nouveau projet</h3>
+        <input type="text" name="Titre" value="" placeholder="titre">
+        <br>
+        <mat-form-field class="example-full-width">
+          <mat-label>Description...</mat-label>
+          <textarea matInput placeholder="Description...."></textarea>
+        </mat-form-field>
+        <br>
+        <input type="submit" name="Soumettre" value="Soumettre" class="bg-success">
+
+      </form>
+    </div>
+
+    <div class="formularios" *ngIf="show4">
+      <form class="" action="#" method="post">
+        <h3>Un nouvel utilisateur</h3>
+        <input type="text" name="nom" value="" placeholder="Nom">
+        <input type="text" name="prenom" value="" placeholder="Prenom">
+        <input type="email" name="email" value="" placeholder="email">
+        <input type="password" name="password" value="" placeholder="password">
+
+        <br>
+        <input type="submit" name="Envoyer" value="Envoyer" class="bg-success">
+
+      </form>
+    </div>
+
+
+
+  </main>
+
+</div>
