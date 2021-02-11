@@ -1,27 +1,107 @@
-# Project1
+<br />
+<p align="center">
+  <h3 align="center">STARTUP POC</h3>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
+  <p align="center">
+    API de suivi de temps passé sur des projets d'entreprise partie front.
+    <br />
+    <a href="#documentation"><strong>Explorer la doc »</strong></a>
+  </p>
+</p>
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Sommaire</h2></summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">A propos du projet</a>
+      <ul>
+        <li><a href="#built-with">Conçu avec</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting strated</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contributing">Contribution</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+<!-- ABOUT THE PROJECT -->
+## A propos du projet
 
-## Running unit tests
+La partie front et developer en ANgular. Elle permet le suivi de temps de travail des développeurs d'une entreprise.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Voici la liste des fonctionnalités implémentées et qui sont liers au backend:
 
-## Running end-to-end tests
+* En tant qu’utilisateur, on peut se connecter via un Login / Password, et acceder au dashboard qui lui est reservé  (les profils supportés sont Admin, Manager, User).
+* Une utilisateur peux se deconnecter correctement.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Voici la liste des fonctionnalités implémentées et qui ne sont liers au backend (par souci de temps car nous avions un problème de droit d'accès comme nous l'avions mentionné pendant la présentation):
 
-## Further help
+* En tant que User, on peut saisir ses temps, à la granularité de la seconde (choix projet + temps).
+* En tant que User, on peut éditer un compte-rendu mensuel (export PDF).
+* En tant que User, on peut consulter les temps saisis par les Users.
+* En tatn que User, on peut supprimer une saisie de temps.
+* En tant que Manager, on peut éditer les compte-rendus périodiques des Users qui lui sont rattachés (export PDF).
+* En tant que Manager, on peut saisir des projets.
+* En tant que Manager, on peut saisir de nouveaux Users qui lui seront rattachés.
+* En tant qu’Admin, on peut changer le statut d’un User (Manager / User).
+* En tant qu’Admin, on peut changer l’affectation d’un User (changement de Manager).
+* En tant qu’utilisateur non authentifié je ne peux pas solliciter l’API (excepté pour m’authentifier).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Il nous reste à faire les autres raquettes pour entièrement connecter le front au backend. 
+
+
+
+### Built With
+
+* [Angular](https://angular.io/)
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+Pour avoir une copie locale du projet, veuillez suivre les étapes suivantes.
+
+### Prerequisites
+
+Il faut installer Angualr CLI sur votre machine, et avoir un IDE. Celui recommandé est PhpStorm.
+
+### Installation
+
+Clone the repo
+   ```sh
+   git clone [ici](https://github.com/Yaya-k/start_up_poc_front) et pour lancer le serveur ng serve
+   ```
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+This project is close to contributions.
+
+
+<!-- LICENSE -->
+## License
+
+No license is attributed to this project.
+
+<!-- CONTACT -->
+## Contact
+
+Yaya Kamissokho - yaya.kamissokho@gmail.com
+Sami Elouafkaoui - samiaymane98@gmail.com
+
+
+
+
