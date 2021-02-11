@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-mananger-dashboard',
   templateUrl: './mananger-dashboard.component.html',
@@ -26,7 +28,7 @@ export class ManangerDashboardComponent implements OnInit {
 
 
 
-  constructor() {
+  constructor(private http: HttpClient, private router: Router) {
     this.show = true;
     this.show1 = false;
     this.show2 = false;
@@ -94,5 +96,11 @@ export class ManangerDashboardComponent implements OnInit {
     const filterValue = value.toLowerCase();
 
     return options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
+  }
+  disconect(): any {
+    return  this.http.get('http://localhost:8080/logout', {withCredentials: true}).subscribe(value => {
+        this.router.navigate(['/login']);
+      }
+    );
   }
 }

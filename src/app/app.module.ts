@@ -22,6 +22,8 @@ import { AdvanceComponent } from './components/advance/advance.component';
 import { BasicComponent } from './components/basic/basic.component';
 import { FormsComponent } from './components/forms/forms.component';
 import { TablesComponent } from './components/tables/tables.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -50,6 +52,7 @@ import { TablesComponent } from './components/tables/tables.component';
     BrowserAnimationsModule,
     AngularMaterialModule,
     HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
     RestapiService,

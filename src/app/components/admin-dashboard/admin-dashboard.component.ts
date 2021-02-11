@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {map, startWith} from 'rxjs/operators';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 interface Statue {
   value: string;
   viewValue: string;
@@ -31,7 +33,7 @@ export class AdminDashboardComponent implements OnInit {
     {value: '3', viewValue: 'Admin'}
   ];
 
-  constructor() {
+  constructor(private http: HttpClient, private router: Router) {
     this.show1 = true;
     this.show2 = false;
   }
@@ -57,6 +59,12 @@ export class AdminDashboardComponent implements OnInit {
   toggle2(): void {
     this.show2 = !this.show2;
     this.show1 = false;
+  }
+  disconect(): any {
+    return  this.http.get('http://localhost:8080/logout', {withCredentials: true}).subscribe(value => {
+      this.router.navigate(['/login']);
+      }
+    );
   }
   private _filter(value: string, options: string[]): string[] {
     const filterValue = value.toLowerCase();
