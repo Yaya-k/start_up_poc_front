@@ -1,15 +1,3 @@
-<br />
-<p align="center">
-  <h3 align="center">STARTUP POC</h3>
-
-  <p align="center">
-    API de suivi de temps passé sur des projets d'entreprise partie front.
-    <br />
-    <a href="#documentation"><strong>Explorer la doc »</strong></a>
-  </p>
-</p>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -81,7 +69,7 @@ Il faut installer Angualr CLI sur votre machine, et avoir un IDE. Celui recomman
 
 Clone the repo
    ```sh
-   git clone [ici](https://github.com/Yaya-k/start_up_poc_front) et pour lancer le serveur ng serve
+   git clone https://github.com/Yaya-k/start_up_poc_front et pour lancer le serveur ng serve
    ```
 
 
